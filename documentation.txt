@@ -1,0 +1,11 @@
+css-admin:
+https://bulma.io/
+jQuery:
+https://jquery.com/
+Oauth2:
+https://developers.google.com/identity/protocols/OAuth2
+https://oauth.net/2/
+youtube:
+https://developers.google.com/youtube/v3/code_samples/
+https://developers.google.com/youtube/v3/
+https://developers.google.com/youtube/iframe_api_reference
