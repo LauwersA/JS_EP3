@@ -1,0 +1,52 @@
+.add_video {
+	background-color: lightgrey;
+	padding: 1rem;
+}
+
+
+.container .columns {
+	margin-left: 0rem;
+}
+
+footer {
+	text-align: center;
+}
+
+.level-item {
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+}
+
+.level-item + .level-item {
+	margin-left: 1rem; 
+}
+
+.level-item label {
+	margin-right: 1rem;
+}
+
+.logo {
+	background-image: url("../img/yt_logo_rgb_light.png");
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	color: transparent;
+	display: block;
+	height: 3rem;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+	width: 10rem;
+}
+
+.logo:hover {
+	color: transparent;
+}
+
+.videos {
+	margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 770px) {
+	.level-item + .level-item {
+		margin-left: 0rem; 
+	}
+}

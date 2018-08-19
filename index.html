@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Clientside scripting</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/bulma.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="vendor/jquery.js"></script>
+		<script src="js/scripts.js"></script>
+	</head>
+	<body>
+		<header class="container">
+			<a href="https://www.youtube.com/?gl=BE" target="_blank" class="logo">youtube</a>
+		</header>
+		<div class="container">
+			<div>
+				<h1 class="title is-3">Voeg een video toe</h1>
+				<div class="add_video">
+					<form>
+						<label>Youtubelink:</label>
+						<input class="input" type="text" name="link">
+						<div class="columns">
+							<div class="level-item is-4-desktop is-one-third-tablet is-half-mobile">
+								<label>Begintijdstip:</label>
+								<input class="input" type="text" name="begintime" placeholder="0:00">
+							</div>
+							<div class="level-item is-4-desktop is-one-third-tablet is-half-mobile">
+								<label>Eindtijdstip:</label>
+								<input class="input" type="text" name="endtime" placeholder="0:00">
+							</div>
+							<div class="level-right level-item is-3-desktop  is-one-third-tablet is-full-mobile">
+								<input class="button is-fullwidth" type="button" value="add video" id="add_video">
+							</div>
+						</div>
+					</form>
+				</div>				
+			</div>
+			<div class="videos">
+				<h1 class="title is-3">Overzicht toegevoegde video's</h1>
+				<div class="container columns">
+					<div class="card column is-one-third-desktop is-one-third-fullhd is-half-tablet is-full-mobile">
+						<div class="card-image">
+							<div class="image">
+								<iframe id="ytvideo" width="100%"
+								src="https://www.youtube.com/embed/zb6XtgK52iU?rel=0&amp;showinfo=0&amp;start=301&amp;end=320" frameborder="1" allow="autoplay; encrypted-media">
+								</iframe>
+							</div>
+							
+						</div>
+						<div class="card-content">
+							<h1 class="title is-4">Video title</h1>
+							<footer class="card-footer">
+								<a href="#">tag1</a>
+								<a href="#">tag2</a>
+							</footer>
+						</div>
+					</div>
+				</div>		
+			</div>
+		</div>
+		<footer class="container">
+			<p>&copy; Andreas Lauwers</p>
+			<p>2017-2018</p>
+		</footer>
+	</body>
+</html>
