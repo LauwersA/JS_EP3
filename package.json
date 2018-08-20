@@ -1,0 +1,41 @@
+{
+  "name": "JS_EP3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp scss",
+    "watch": "gulp watch-scss",
+    "test": "jest --coverage",
+    "start": "npm run watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LauwersA/JS_EP3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LauwersA/JS_EP3/issues"
+  },
+  "homepage": "https://github.com/LauwersA/JS_EP3#readme",
+  "dependencies": {
+    "bulma": "^0.7.1",
+    "jquery": "3.3.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-if": "^2.0.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "jest": "23.5.0",
+    "node-sass-tilde-importer": "^1.0.2",
+    "yargs": "^12.0.1"
+  },
+  "engines": {
+    "node": "8.11.4",
+    "npm": "5.6.0"
+  }
+}

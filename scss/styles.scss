@@ -1,3 +1,5 @@
+@import "~bulma/bulma";
+
 .add_video {
 	background-color: lightgrey;
 	padding: 1rem;
@@ -18,7 +20,7 @@ footer {
 }
 
 .level-item + .level-item {
-	margin-left: 1rem; 
+	margin-left: 1rem;
 }
 
 .level-item label {
@@ -47,6 +49,6 @@ footer {
 
 @media only screen and (max-width: 770px) {
 	.level-item + .level-item {
-		margin-left: 0rem; 
+		margin-left: 0rem;
 	}
 }
