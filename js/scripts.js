@@ -5,11 +5,6 @@
         return $("#ytvideo").width()/16 * 9;
     };
     function createCard(i,rowindex, id, link, begintime, endtime ) {
-        i++
-        if (i % 3 == 0){
-            rowindex ++;
-            $(".videos").append("<div class=\"container columns " + rowindex + "\"></div>")
-        }
         $(".videos .container.columns." + rowindex ).append("<div class=\"card column is-one-third-desktop is-one-third-fullhd is-half-tablet is-full-mobile " + id + "\">"+
             "<div class=\"card-image\">" +
                 "<div class=\"image\">" +
@@ -45,21 +40,21 @@
 				var $videos = data.videos;
                 console.log($videos);
                 var $countvideos = $videos.length;
-                var rowindex = 0;
-				for(var i = 0; i< $countvideos; i++){
-					if (i % 3 == 0){
-                        rowindex ++;
-                        $(".videos").append("<div class=\"container columns " + rowindex + "\"></div>")
+                var $rowindex = 1;
+				for(var $i = 0; $i< $countvideos; $i++){
+					if ($i % 3 == 0 && $i > 2){
+                        $rowindex ++;
+                        $(".videos").append("<div class=\"container columns " + $rowindex + "\"></div>")
                     }
-                    var $id = $videos[i].Id;
-					var $link = $videos[i].Link;
-                    var $begintime = $videos[i].Begintime;
-                    var $endtime = $videos[i].Endtime;
-                    var $favorite = $videos[i].Favorite;
+                    var $id = $videos[$i].Id;
+					var $link = $videos[$i].Link;
+                    var $begintime = $videos[$i].Begintime;
+                    var $endtime = $videos[$i].Endtime;
+                    var $favorite = $videos[$i].Favorite;
                     //creates div that contains a profile image and a comment
                     console.log($link);
-                    /*createCard(i, $rowindex, $id, $link, $begintime, $endtime);*/
-                    $(".videos .container.columns." + rowindex ).append("<div class=\"card column is-one-third-desktop is-one-third-fullhd is-half-tablet is-full-mobile " + $id + "\">"+
+                    createCard($i, $rowindex, $id, $link, $begintime, $endtime);
+                    /*$(".videos .container.columns." + rowindex ).append("<div class=\"card column is-one-third-desktop is-one-third-fullhd is-half-tablet is-full-mobile " + $id + "\">"+
                         "<div class=\"card-image\">" +
                             "<div class=\"image\">" +
                                 "<iframe id=\"ytvideo\" width=\"100%\" src=https://www.youtube.com/embed/" + $link + "?controls=0&amp;rel=0&amp;showinfo=0&amp;start=" + $begintime + "&amp;end=" + $endtime + "&amp;loop=1\" frameborder=\"1\" allow=\"autoplay; encrypted-media\">" +
@@ -74,7 +69,7 @@
                             "<a href=\"#\" class=\"card-footer-item " + $id + "\">Vind ik leuk</a>" +
                             "<a href=\"#\" class=\"card-footer-item " + $id + "\">Verwijder video</a>" +
                         "</footer>" +
-                    "</div>");
+                    "</div>");*/
                 }
                 $("[id='ytvideo']").height(setHeight());
 			},
