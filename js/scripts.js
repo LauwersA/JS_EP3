@@ -1,5 +1,30 @@
 ;
 (function ($){
+    var CLIENT_ID = '798174822331-k3gtkdnfraru2rf5ifhq7vjtal9jud8o.apps.googleusercontent.com';
+    const CLIENT_SECRET = 'SOQOhbj3U5ZbUTMiZBqMh27x';
+    var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"];
+    var SCOPES = 'https://www.googleapis.com/auth/youtube.readonly';
+
+    window.handleClientLoad = function() {
+        gapi.load('client:auth2', initClient);
+    }
+    function initClient() {
+        gapi.client.init({
+          discoveryDocs: DISCOVERY_DOCS,
+          clientId: CLIENT_ID,
+          scope: SCOPES
+        }).then(function () {
+          // Listen for sign-in state changes.
+          gapi.auth2.getAuthInstance().isSignedIn.listen(function() {
+            console.info(gapi.auth2.getAuthInstance().isSignedIn.get());
+          });
+
+          // Handle the initial sign-in state.
+          //updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+          gapi.auth2.getAuthInstance().signIn();
+          console.info(gapi.auth2.getAuthInstance().isSignedIn.get());
+        });
+      }
 
     function setHeight() {
         return $("#ytvideo").width()/16 * 9;
@@ -8,7 +33,7 @@
         $(".videos .container.columns." + rowindex ).append("<div class=\"card column is-one-third-desktop is-one-third-fullhd is-half-tablet is-full-mobile " + id + "\">"+
             "<div class=\"card-image\">" +
                 "<div class=\"image\">" +
-                    "<iframe id=\"ytvideo\" width=\"100%\" src=https://www.youtube.com/embed/" + link + "?controls=0&amp;rel=0&amp;showinfo=0&amp;start=" + begintime + "&amp;end=" + endtime + "&amp;loop=1\" frameborder=\"1\" allow=\"autoplay; encrypted-media\">" +
+                    "<iframe id=\"ytvideo\" width=\"100%\" src=https://www.youtube.com/embed/" + link + "?controls=1&amp;rel=0&amp;showinfo=0&amp;start=" + begintime + "&amp;end=" + endtime + "&amp;loop=1\" frameborder=\"1\" allow=\"autoplay; encrypted-media\">" +
                     "</iframe>" +
                 "</div>" +                            
             "</div>"+
@@ -29,10 +54,12 @@
         });
 
         $.ajax({
-            url: 'vendor/api.php',
+            url: 'api.php',
 			type: 'GET',
 			data: {
-				action: 'getvideos'
+                action: 'getvideos',
+                begintime: $('#form_begintime').val(),
+                endtime: $('#form_endtime').val()
             },            
             dataType: 'json',
 			success: function(data) {
@@ -85,7 +112,7 @@
             $endtime = $('#form_link').val();
             
             $.ajax({
-                url: 'vendor/api.php',
+                url: 'api.php',
                 type: 'GET',
                 data: {
                     link: $link,

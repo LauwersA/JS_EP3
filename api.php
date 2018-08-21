@@ -34,7 +34,6 @@
 	}
 
 	if ($action == 'getvideos') {
-
 		$statement = $db->prepare('SELECT * FROM videos ORDER BY Favorite DESC');
 		$statement->execute(array());
 		$videos = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -76,4 +75,5 @@
 		'status' => 400,				
 		'message' => 'invalid API call'
 	)));		
+
 

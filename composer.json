@@ -1,0 +1,13 @@
+{
+    "name": "vendor/name",
+    "description": "EP3js",
+    "authors": [
+        {
+            "name": "Andreas Lauwers",
+            "email": "andreas.lauwers@student.odisee.be"
+        }
+    ],
+    "require": {
+        "google/apiclient": "^2.0"
+    }
+}

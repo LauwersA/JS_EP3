@@ -3,8 +3,11 @@
 	<head>
 		<title>Clientside scripting</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="out/css/styles.css">
-		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 		<script src="js/scripts.js"></script>
 	</head>
 	<body>
@@ -45,5 +48,9 @@
 			<p>&copy; Andreas Lauwers</p>
 			<p>2017-2018</p>
 		</footer>
+		<script async defer src="https://apis.google.com/js/api.js"
+			onload="this.onload=function(){};handleClientLoad()"
+			onreadystatechange="if (this.readyState === 'complete') this.onload()">
+		</script>
 	</body>
 </html>
